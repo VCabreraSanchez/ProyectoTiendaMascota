@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiendaPet</title>
+    <link rel="stylesheet" href="css/stylesHome.css">
+</head>
+<body>
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html"><img src="imagenes_iconos/PetShopLogo.png" alt="Logo"></a>
+        </div>
+
+        <!-- Buscador -->
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+            <button>Buscar</button>
+        </div>
+
+        <!-- Carrito e Inicio de Sesión -->
+        <div class="user-options">
+            <div class="cart-icon">
+                <img src="imagenes_iconos/carritoIcon.png" alt="Carrito">
+            </div>
+            <span id="user-status"><a href="formulario.html">Iniciar sesión/Registrarse</a></span>
+        </div>
+    </header>
+
+    <!-- Categorías y Subcategorías -->
+    <nav>
+        <ul class="categorias">
+            <li class="categoria">Todos los productos</li>
+            <li class="categoria">Comida
+                <ul class="subcategoria">
+                    <li>Seco</li>
+                    <li>Húmedo</li>
+                </ul>
+            </li>
+            <li class="categoria">Limpieza
+                <ul class="subcategoria">
+                    <li>Baño</li>
+                    <li>Casa</li>
+                </ul>
+            </li>
+            <li class="categoria">Juguetes</li>
+        </ul>
+    </nav>
+    
+    <script src="js/jsHome.js"></script>
+</body>
 </html>

@@ -1,0 +1,142 @@
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo de la cabecera */
+header {
+    background-color: #333;
+    color: white;
+    padding: 0px; /* Aumenta la altura de la cabecera */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo del logo */
+.logo {
+    margin-left: 50px; /* Ajusta la distancia del logo desde el borde izquierdo */
+}
+
+.logo img {
+    width: 150px; /* Mantener tamaño deseado del logo */
+    height: 150px; /* Mantener tamaño deseado del logo */
+    margin-right: -80px; /* Ajusta la distancia entre el logo y el buscador */
+}
+
+/* Estilos para el buscador */
+.search-bar {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el buscador */
+    margin-right: -50px; /* Ajusta la distancia entre el buscador y el icono del carrito */
+}
+
+.search-bar input[type="text"] {
+    padding: 10px; /* Aumenta el padding para hacerlo más cómodo */
+    border: none;
+    border-radius: 3px;
+    width: 500px; /* Ajusta el ancho del campo de búsqueda */
+    font-size: 16px; /* Cambia el tamaño del texto */
+}
+
+.search-bar button {
+    padding: 10px 15px; /* Aumenta el padding para hacerlo más cómodo */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Estilo del icono del carrito y el texto de inicio de sesión */
+.user-options {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Espacio entre el icono del carrito y el texto */
+    margin-right: 20px; /* Ajusta la distancia del borde derecho */
+}
+
+.user-options a {
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: white; /* Asegura que el texto sea visible en el fondo */
+    margin-left: 10px; /* Espacio entre el icono del carrito y el texto */
+    padding-right: 20px; /* Espacio entre el texto y el borde derecho */
+}
+
+.user-options .cart-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Ajusta el tamaño total del círculo */
+    height: 50px; /* Ajusta el tamaño total del círculo */
+    background-color: white;
+    border-radius: 50%; /* Hace el fondo circular */
+    padding: 5px; /* Ajusta el espacio interno del icono dentro del círculo */
+}
+
+.user-options .cart-icon img {
+    width: 50px; /* Ajusta el tamaño del icono */
+    height: 50px;
+}
+
+/* Estilos de la navegación */
+nav {
+    background-color: #f8f8f8;
+}
+
+ul.categorias {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Cambia a flex para disposición horizontal */
+    justify-content: space-between; /* Asegura que haya espacio entre categorías */
+}
+
+ul.categorias > li {
+    position: relative; /* Necesario para posicionar las subcategorías */
+    flex: 1; /* Permite que cada categoría ocupe el mismo espacio */
+    text-align: center; /* Centra el texto en cada categoría */
+    padding: 10px 0; /* Espaciado interno */
+    cursor: pointer;
+    border-right: 1px solid #ddd; /* Línea divisoria entre categorías */
+}
+
+ul.categorias > li:last-child {
+    border-right: none; /* Quita la línea divisoria del último elemento */
+}
+
+ul.categorias > li:hover {
+    background-color: #e9ecef; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos de las subcategorías */
+ul.subcategoria {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Ocultar subcategorías por defecto */
+    position: absolute; /* Para que se superponga a las categorías */
+    left: 0; /* Alinear al borde izquierdo */
+    top: 100%; /* Posicionar justo debajo de la categoría */
+    width: 100%; /* Hacer que la subcategoría ocupe todo el ancho de la categoría principal */
+    background-color: white; /* Color de fondo de subcategorías */
+    border: 1px solid #ddd; /* Línea divisoria */
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+}
+
+ul.categorias > li:hover > ul.subcategoria {
+    display: block; /* Mostrar subcategorías al pasar el mouse */
+}
+
+/* Estilo de las subcategorías individuales */
+ul.subcategoria li {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center; /* Centra el texto en las subcategorías */
+}
+
+ul.subcategoria li:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el mouse sobre subcategorías */
+}
