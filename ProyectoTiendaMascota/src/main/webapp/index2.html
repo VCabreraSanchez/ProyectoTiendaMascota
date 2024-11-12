@@ -10,7 +10,7 @@
     <header>
         <!-- Logo -->
         <div class="logo">
-            <a href="index.html"><img src="imagenes_iconos/PetShopLogo.png" alt="Logo"></a>
+            <a href="index.jsp"><img src="imagenes_iconos/PetShopLogo.png" alt="Logo"></a>
         </div>
 
         <!-- Buscador -->
@@ -68,32 +68,49 @@
     <!-- Contenedor de productos -->
     <div class="product-list">
         <!-- Ejemplo de producto -->
-        <div class="product-item">
+        <div class="product-item" data-id="1">
             <img src="imagenes_productos/producto1.jpg" alt="Producto 1">
             <h3>Nombre del Producto 1</h3>
             <p>$Precio</p>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-id="2">
             <img src="imagenes_productos/producto2.jpg" alt="Producto 2">
             <h3>Nombre del Producto 2</h3>
             <p>$Precio</p>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-id="2">
             <img src="imagenes_productos/producto2.jpg" alt="Producto 2">
             <h3>Nombre del Producto 2</h3>
             <p>$Precio</p>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-id="2">
             <img src="imagenes_productos/producto2.jpg" alt="Producto 2">
             <h3>Nombre del Producto 2</h3>
             <p>$Precio</p>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-id="2">
             <img src="imagenes_productos/producto2.jpg" alt="Producto 2">
             <h3>Nombre del Producto 2</h3>
             <p>$Precio</p>
         </div>
-        
+        <div class="product-list">
+            <!-- Ejemplo de producto (dinámico) -->
+            <%
+                // Aquí puedes agregar lógica para cargar productos desde la base de datos
+                List<Product> productos = (List<Product>) request.getAttribute("productos");
+                if (productos != null) {
+                    for (Product producto : productos) {
+            %>
+                        <div class="product-item" data-id="<%= producto.getId() %>">
+                            <img src="imagenes_productos/<%= producto.getImagen() %>" alt="<%= producto.getNombre() %>">
+                            <h3><%= producto.getNombre() %></h3>
+                            <p>$<%= producto.getPrecio() %></p>
+                        </div>
+            <%
+                    }
+                }
+            %>
+        </div>
         
         <!-- Agrega más productos aquí -->
     </div>

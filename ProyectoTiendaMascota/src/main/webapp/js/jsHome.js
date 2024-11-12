@@ -21,3 +21,19 @@ function sortProducts() {
         console.log("Ordenar Descendente");
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Selecciona todos los elementos con la clase "product-item"
+    const productItems = document.querySelectorAll(".product-item");
+
+    // Agrega un evento de clic a cada producto
+    productItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            // Obtiene el ID del producto desde el atributo data-id
+            const productId = item.getAttribute("data-id");
+            
+            // Redirige a la página de detalles del producto con el ID en la URL
+            window.location.href = `detalleProducto.html?id=${productId}`;
+        });
+    });
+});
